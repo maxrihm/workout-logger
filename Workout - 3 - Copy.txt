@@ -1,0 +1,38 @@
+Workout 1 - Chest and Triceps
+6/9/2022
+Barbell bench press, 4, 10, 90
+Incline Bench Press, 3, 8, 90
+Decline bench press, 3, 8, 90
+Dumbbell Flys, 2, 10, 90
+Dumbbell Pullover, 2, 8, 90
+Straight Bar Tricep Extension, 4, 10, 90
+Dips, 3, 10, 90
+Bench Dips, 3, 8, 90
+Workout 2 - Back and Biceps
+6/11/2022
+Barbell deadlifts, 5, 10, 90
+Chin-ups, 2, 8, 90
+One Arm Dumbbell Row, 3, 8, 90
+Cable Row, 2, 8, 90
+Close Grip Lat Pull Down, 3, 10, 90
+Barbell curls, 3, 8, 90
+EZ Bar Preacher Curl, 3, 8, 90
+Incline Dumbbell Curl, 2, 12, 90
+Concentration curls, 2, 10, 90
+Workout 3 - Shoulders and Forearms
+6/12/2022
+Smith Machine Shoulder Press, 3, 10, 90
+Seated Bent Over Dumbbell Reverse Fly, 3, 10, 90
+Standing Military Press, 4, 10, 90
+DB lateral raises, 2, 10, 90
+Dumbbell Shrug, 2, 10, 90
+Upright rows, 2, 10, 90
+Standing Wrist Curl Behind Back, 4, 10, 90
+Seated Barbell Wrist Curl, 4, 10, 90
+Workout 4 - Legs
+6/7/2022
+Back squats, 5, 10, 90
+Leg extensions, 3, 12, 90
+Leg curls, 3, 12, 90
+Standing Barbell Calf Raise, 4, 12, 90
+Seated Calf Raises, 2, 12, 90

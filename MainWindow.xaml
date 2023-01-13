@@ -1,0 +1,83 @@
+﻿<Window x:Class="WorkoutLog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorkoutLog"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="698" Width="1200" ResizeMode="NoResize" Left="104" Top="104" WindowStyle="None">
+    <Grid>
+
+        <Label x:Name="label_name" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="188" Focusable="True" FocusVisualStyle="{x:Null}"/>
+        <Button x:Name="test_func" Content="Test" HorizontalAlignment="Left" Height="19" Margin="875,493,0,0" VerticalAlignment="Top" Width="40" Click="test_func_Click"/>
+        <ListBox x:Name="element_exercises_list" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="18,71,0,459" MouseEnter="element_exercises_list_MouseEnter" SelectionChanged="updateExercise" SelectedIndex="0" Width="180" HorizontalAlignment="Left"/>
+        <Button x:Name="finish_button" Content="Finish" HorizontalAlignment="Left" Margin="878,517,0,0" VerticalAlignment="Top" Click="finish_button_Click"/>
+        <Label x:Name="label_error" Content="Error!" HorizontalAlignment="Left" Margin="335,38,0,0" VerticalAlignment="Top" Foreground="Red" />
+
+        <TextBox x:Name="set1_weight" TextChanged="calculateVolumes" PreviewMouseDown="XValue_PreviewMouseDown" HorizontalAlignment="Left" Margin="310,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20"/>
+        <TextBox x:Name="set1_reps" TextChanged="calculateVolumes" PreviewMouseDown="XValue_PreviewMouseDown" HorizontalAlignment="Left" Margin="310,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20"/>
+        <TextBox x:Name="set2_weight" TextChanged="calculateVolumes" PreviewMouseDown="XValue_PreviewMouseDown" HorizontalAlignment="Left" Margin="373,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20"/>
+        <TextBox x:Name="set2_reps" TextChanged="calculateVolumes" PreviewMouseDown="XValue_PreviewMouseDown" HorizontalAlignment="Left" Margin="373,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20"/>
+        <TextBox x:Name="set3_weight" TextChanged="calculateVolumes" PreviewMouseDown="XValue_PreviewMouseDown" HorizontalAlignment="Left" Margin="436,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20"/>
+        <TextBox x:Name="set3_reps" TextChanged="calculateVolumes" PreviewMouseDown="XValue_PreviewMouseDown" HorizontalAlignment="Left" Margin="436,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" />
+        <TextBox HorizontalAlignment="Left" Margin="237,166,0,0" TextWrapping="Wrap" Text="Weight" VerticalAlignment="Top" Width="74" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="set1_label" HorizontalAlignment="Left" Margin="310,109,0,0" TextWrapping="Wrap" Text="Set 1" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="set2_label" HorizontalAlignment="Left" Margin="373,109,0,0" TextWrapping="Wrap" Text="Set 2" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="set3_label" HorizontalAlignment="Left" Margin="436,109,0,0" TextWrapping="Wrap" Text="Set 3" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" Margin="237,147,0,0" TextWrapping="Wrap" Text="Reps" VerticalAlignment="Top" Width="74" Height="20" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Total &#xD;&#xA;volume" VerticalAlignment="Top" Width="74" Height="38" IsReadOnly="True" TextDecorations="{x:Null}" Margin="237,185,0,0" UseLayoutRounding="True"/>
+        <TextBox HorizontalAlignment="Left" Margin="373,90,0,0" TextWrapping="Wrap" Text="Last time" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" Margin="237,90,0,0" TextWrapping="Wrap" Text="PR" VerticalAlignment="Top" Width="74" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="textbox_total_volume" HorizontalAlignment="Left" Margin="373,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="last_time_textbox" HorizontalAlignment="Left" Margin="436,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="harder_last_time_textbox" TextChanged="updateIcons" MouseDoubleClick="additionalSet" HorizontalAlignment="Left" Margin="436,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="pr_volume_textbox" HorizontalAlignment="Left" Margin="310,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="textbox_pr_current" TextChanged="updateIcons" HorizontalAlignment="Left" Margin="310,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="date_textbox" HorizontalAlignment="Left" Margin="237,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Height="20"/>
+        <TextBox x:Name="textbox_exercise_name" HorizontalAlignment="Left" Margin="237,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="textbox_set1_total_volume" HorizontalAlignment="Left" Margin="310,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="textbox_set2_total_volume" HorizontalAlignment="Left" Margin="373,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="textbox_set3_total_volume" HorizontalAlignment="Left" Margin="436,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="textbox_set1_po_pr" MouseDoubleClick="dropSets" HorizontalAlignment="Left" Margin="310,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="textbox_set2_po_pr" MouseDoubleClick="dropSets" HorizontalAlignment="Left" Margin="373,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="textbox_set3_po_pr" MouseDoubleClick="dropSets" HorizontalAlignment="Left" Margin="436,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" Margin="237,128,0,0" TextWrapping="Wrap" Text="PO/PR" VerticalAlignment="Top" Width="74" Height="20" IsReadOnly="True"/>
+
+        <ListBox x:Name="last_time_list" Margin="230,223,544,14" Background="Transparent" BorderBrush="#00ABADB3" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding image_path}"></Image>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox x:Name="set4_weight" TextChanged="calculateVolumes" PreviewMouseDown="XValue_PreviewMouseDown" HorizontalAlignment="Left" Margin="499,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20"/>
+        <TextBox x:Name="set4_reps" TextChanged="calculateVolumes" PreviewMouseDown="XValue_PreviewMouseDown" HorizontalAlignment="Left" Margin="499,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" />
+        <TextBox x:Name="set4_label" HorizontalAlignment="Left" Margin="499,109,0,0" TextWrapping="Wrap" Text="Set 4" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="textbox_set4_total_volume" HorizontalAlignment="Left" Margin="499,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="textbox_set4_po_pr" MouseDoubleClick="dropSets" HorizontalAlignment="Left" Margin="499,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="set5_weight" TextChanged="calculateVolumes" PreviewMouseDown="XValue_PreviewMouseDown" HorizontalAlignment="Left" Margin="562,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20"/>
+        <TextBox x:Name="set5_reps" TextChanged="calculateVolumes" PreviewMouseDown="XValue_PreviewMouseDown" HorizontalAlignment="Left" Margin="562,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" />
+        <TextBox x:Name="set5_label" HorizontalAlignment="Left" Margin="562,109,0,0" TextWrapping="Wrap" Text="Set 5" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="textbox_set5_total_volume" HorizontalAlignment="Left" Margin="562,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <TextBox x:Name="textbox_set5_po_pr" MouseDoubleClick="dropSets" HorizontalAlignment="Left" Margin="562,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="20" IsReadOnly="True"/>
+        <Image x:Name="last_time_icon" HorizontalAlignment="Left" Height="16" Margin="483,205.5,0,0" VerticalAlignment="Top" Width="16" Source="/correct.png"/>
+        <Image x:Name="pr_icon" HorizontalAlignment="Left" Height="16" Margin="357,205.5,0,0" VerticalAlignment="Top" Width="16" Source="/medal.png"/>
+        <TextBox HorizontalAlignment="Left" Margin="24,276,0,0" TextWrapping="Wrap" Text="Drop set" VerticalAlignment="Top" Width="55" IsReadOnly="True"/>
+        <TextBox x:Name="dropset_weight1_textbox" PreviewMouseDown="XValue_PreviewMouseDown" TextChanged="updateDropSets" HorizontalAlignment="Left" Margin="78,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Text="0"/>
+        <TextBox x:Name="dropset_weight2_textbox" PreviewMouseDown="XValue_PreviewMouseDown" TextChanged="updateDropSets" HorizontalAlignment="Left" Margin="137,310,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="dropset_total_volume_textbox" HorizontalAlignment="Left" Margin="137,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Text="0" IsReadOnly="True"/>
+        <ListBox x:Name="dropset_list" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="79,327,765,69" ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="Transparent" BorderBrush="#00ABADB3" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+        <TextBox x:Name="textbox_dropset_current" HorizontalAlignment="Left" Margin="78,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" Margin="24,310,0,0" TextWrapping="Wrap" Text="Weights" VerticalAlignment="Top" Width="55" Height="18" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" Margin="24,293,0,0" TextWrapping="Wrap" Text="Reps" VerticalAlignment="Top" Width="55" Height="18" IsReadOnly="True"/>
+        <TextBox x:Name="dropset_reps1_textbox" PreviewMouseDown="XValue_PreviewMouseDown" TextChanged="updateDropSets" HorizontalAlignment="Left" Margin="78,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Text="0"/>
+        <TextBox x:Name="dropset_reps2_textbox" PreviewMouseDown="XValue_PreviewMouseDown" TextChanged="updateDropSets" HorizontalAlignment="Left" Margin="137,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Text="0"/>
+        <Button x:Name="timer_button" Click="startTimer" Content="000" HorizontalAlignment="Left" Margin="203,30,0,0" VerticalAlignment="Top" Height="32" Width="32"/>
+        <Image x:Name="img_table" HorizontalAlignment="Left" Height="280" Margin="656,71,0,0" VerticalAlignment="Top" Width="459" Stretch="Uniform"/>
+
+
+
+    </Grid>
+</Window>

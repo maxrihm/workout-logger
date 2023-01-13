@@ -1,0 +1,40 @@
+Workout 1 - Back & Biceps
+7/2/2022
+Barbell deadlifts, 2, 5, 75
+One Arm Dumbbell Row, 3, 12, 75
+Pull-ups, 3, 12, 75
+Barbell row, 3, 12, 75
+Cable Row, 1, 1, 1
+EZ Bar Preacher Curl, 3, 12, 75
+Concentration curls, 3, 12, 75
+Alternate Seated Dumbbell Curl, 1, 1, 1
+Workout 2 - Chest & Triceps
+7/10/2022
+Barbell bench press, 3, 10, 75
+Incline DB bench press, 3, 12, 75
+Chest Dip, 3, 1, 75
+Pec Dec, 3, 15, 75
+Machine Bench Press, 1, 1, 1
+EZ Bar Skullcrusher, 3, 12, 75
+Seated Dumbbell Tricep Extension, 3, 12, 75
+Straight Bar Tricep Extension, 1, 1, 1
+Workout 3 - Legs
+7/13/2022
+Back squats, 3, 10, 75
+Leg Press, 3, 20, 75
+Machine Hack Squat, 3, 12, 75
+Leg extensions, 1, 1, 1
+Romanian deadlifts, 3, 12, 75
+Leg curls, 1, 1, 1
+Standing Barbell Calf Raise, 3, 15, 75
+Seated Calf Raises, 1, 1, 1
+Workout 4 - Shoulders
+7/12/2022
+Seated Military Press, 3, 10, 75
+Seated Arnold Press, 3, 12, 75
+DB lateral raises, 3, 15, 75
+Smith Machine Shoulder Press, 1, 1, 1
+Upright rows, 3, 12, 75
+Barbell shrugs, 1, 1, 1
+Seated Barbell Wrist Curl, 3, 15, 75
+Barbell Static Hold, 1, 1, 1
