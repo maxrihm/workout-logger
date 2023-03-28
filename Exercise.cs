@@ -1,31 +1,62 @@
-﻿using System;
+using System;
 using System.Diagnostics;
+
 namespace WorkoutLog
 { 
-public class Exercise
-{
-	public string exercise_name;
-	public int exercise_sets;
-	public int exercise_reps;
-	public string exercise_rest;
-	public double [] weight_array = new double [10];
-	public int [] reps_array = new int [10];
-	public double total_weight;
+    public class Exercise
+    {
+        private readonly string name;
+        private readonly int sets;
+        private readonly int reps;
+        private readonly string rest;
+        private readonly double[] weights = new double[10];
+        private readonly int[] repetitions = new int[10];
+        private double totalWeight;
 
-		public Exercise(string ex_name, int ex_sets, int ex_reps, string ex_rest)
-		{
-		exercise_name = ex_name;
-		exercise_sets = ex_sets;
-		exercise_reps = ex_reps;
-		exercise_rest = ex_rest;
-		}
-
-	public void inputWeights(int set, double weight, int rep)
+        public Exercise(string name, int sets, int reps, string rest)
         {
-			weight_array[set] = weight;
-			reps_array[set] = rep;
+            this.name = name;
+            this.sets = sets;
+            this.reps = reps;
+            this.rest = rest;
         }
-	
-		
-}
+
+        public void InputWeights(int set, double weight, int rep)
+        {
+            weights[set] = weight;
+            repetitions[set] = rep;
+        }
+
+        public string GetName()
+        {
+            return name;
+        }
+
+        public int GetSets()
+        {
+            return sets;
+        }
+
+        public int GetReps()
+        {
+            return reps;
+        }
+
+        public string GetRest()
+        {
+            return rest;
+        }
+
+        public double GetTotalWeight()
+        {
+            if (totalWeight == 0)
+            {
+                for (int i = 0; i < sets; i++)
+                {
+                    totalWeight += weights[i] * repetitions[i];
+                }
+            }
+            return totalWeight;
+        }
+    }
 }
