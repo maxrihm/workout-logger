@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WorkoutLog.Properties
+namespace WpfApp1.Properties
 {
 
 
